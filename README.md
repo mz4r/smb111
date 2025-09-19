@@ -3,7 +3,8 @@
 ## Objectifs 
 - Configuration hardening de 3 VM
 - Mise en place automatisé d'un cluster k8s avec 1 node sur chaque VM
-- Mise en place 
+- Mise en place automatisé de longhorn et argocd
+- Deploiment du service via argocd  
 
 
 ## Hardening
