@@ -1,5 +1,0 @@
-- name: Install Kubernetes on local server
-  hosts: k8s
-  become: yes
-  roles:
-    - k8s

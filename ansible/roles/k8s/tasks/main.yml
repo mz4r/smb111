@@ -1,0 +1,8 @@
+
+- name: Install Docker
+  include_tasks: docker.yml
+  when; install_docker
+
+- name: Install K8S
+  include_tasks: k8s.yml
+
