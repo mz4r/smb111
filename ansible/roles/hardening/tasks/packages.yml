@@ -1,0 +1,10 @@
+- name: Supprimer les paquets non sécurisés
+  package:
+    name: ['telnet', 'rsh-server', 'xinetd']
+    state: absent
+
+- name: Installer les outils de sécurité
+  package:
+    name: ['ufw', 'fail2ban', 'auditd']
+    state: present
+

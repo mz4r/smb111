@@ -1,0 +1,25 @@
+
+- name: Hardening - SSH
+  include_tasks: ssh.yml
+  when: enable_ssh_hardening
+
+- name: Hardening - Paquets
+  include_tasks: packages.yml
+  when: enable_package_hardening
+
+- name: Hardening - Pare-feu
+  include_tasks: firewall.yml
+  when: enable_firewall
+
+- name: Hardening - DNS
+  include_tasks: dns.yml
+  when: enable_dns
+
+- name: Hardening - Dépôts
+  include_tasks: repos.yml
+  when: enable_repos
+
+- name: Hardening - Réseau
+  include_tasks: network.yml
+  when: enable_network_config
+

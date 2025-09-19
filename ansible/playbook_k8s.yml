@@ -1,0 +1,5 @@
+- name: Install Kubernetes Cluster (Single Node)
+  hosts: all
+  become: yes
+  roles:
+    - k8s

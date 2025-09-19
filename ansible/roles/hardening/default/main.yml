@@ -1,0 +1,14 @@
+enable_ssh_hardening: false
+enable_package_hardening: false
+enable_firewall: false
+enable_dns: false
+enable_repos: false
+enable_network_config: false
+
+# Variables réseau
+new_hostname: "secure-host"
+ip_address: "192.168.1.100"
+netmask: "255.255.255.0"
+gateway: "192.168.1.1"
+dns_servers: ["9.9.9.9", "1.1.1.1"]
+

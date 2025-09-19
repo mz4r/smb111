@@ -1,0 +1,11 @@
+- name: Activer UFW avec règles basiques
+  ufw:
+    state: enabled
+    policy: deny
+
+- name: Autoriser SSH
+  ufw:
+    rule: allow
+    port: 22
+    proto: tcp
+

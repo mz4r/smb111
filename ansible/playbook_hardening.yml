@@ -1,0 +1,6 @@
+- name: Playbook de Hardening
+  hosts: all
+  become: true
+  roles:
+    - hardening
+

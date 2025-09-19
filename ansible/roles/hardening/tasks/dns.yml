@@ -1,0 +1,11 @@
+- name: Configurer les DNS via systemd-resolved
+  blockinfile:
+    path: /etc/systemd/resolved.conf
+    block: |
+      [Resolve]
+      DNS={{ dns_servers | join(' ') }}
+      FallbackDNS=8.8.8.8
+      DNSSEC=yes
+  when: ansible_os_family == "Debian"
+  notify: restart systemd-resolved
+

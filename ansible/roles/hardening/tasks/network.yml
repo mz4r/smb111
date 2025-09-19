@@ -1,0 +1,29 @@
+- name: Définir le nom d’hôte
+  hostname:
+    name: "{{ new_hostname }}"
+
+- name: Configurer /etc/hosts
+  copy:
+    dest: /etc/hosts
+    content: |
+      127.0.0.1   localhost
+      127.0.1.1   {{ new_hostname }}
+    mode: '0644'
+
+- name: Configurer l’interface réseau statique (Debian)
+  copy:
+    dest: /etc/network/interfaces
+    content: |
+      auto lo
+      iface lo inet loopback
+
+      auto eth0
+      iface eth0 inet static
+        address {{ ip_address }}
+        netmask {{ netmask }}
+        gateway {{ gateway }}
+        dns-nameservers {{ dns_servers | join(' ') }}
+    mode: '0644'
+  when: ansible_os_family == "Debian"
+  notify: restart networking
+
